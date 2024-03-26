@@ -1,0 +1,113 @@
+/* Global styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container styles */
+.container {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Form control styles */
+.form-control {
+    margin-bottom: 20px;
+}
+
+.form-control label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: bold;
+}
+
+.form-control input[type="text"],
+.form-control input[type="email"],
+.form-control input[type="number"],
+.form-control input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #fff;
+    color: #333;
+    font-size: 16px;
+}
+
+.form-control input[type="file"] {
+    padding: 10px;
+}
+
+/* File upload label styles */
+.file-upload label {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.file-upload label:hover {
+    background-color: #0056b3;
+}
+
+/* Checkbox styles */
+.checkbox label {
+    display: inline-block;
+    margin-bottom: 0;
+    color: #333;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.checkbox input[type="checkbox"] {
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+/* Submit button styles */
+button[type="submit"] {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #218838;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 600px) {
+    .container {
+        max-width: 90%;
+    }
+
+    .form-control input[type="text"],
+    .form-control input[type="email"],
+    .form-control input[type="number"],
+    .form-control input[type="file"] {
+        font-size: 14px;
+    }
+
+    button[type="submit"] {
+        font-size: 16px;
+    }
+}

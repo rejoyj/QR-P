@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Upload Page</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f1f1f1;
+}
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.upload-box {
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+#file-input {
+    display: none;
+}
+label.upload-label {
+    display: block;
+    width: 200px;
+    height: 50px;
+    background-color: #3498db;
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 0 auto;
+}
+#image-preview {
+    text-align: center;
+    margin-top: 20px;
+    display: none;
+}
+#image-preview img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    resize: none;
+    margin-bottom: 10px;
+}
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Image Upload Page</h1>
+    <div id="image-preview">
+        <img id="uploaded-image">
+    </div>
+    <div class="upload-box">
+        <input type="file" id="file-input" accept="image/*">
+        <label for="file-input" class="upload-label">Select Image</label>
+    </div>
+    <div>
+        <textarea id="description" placeholder="Enter description..."></textarea>
+    </div>
+    <div>
+        <button onclick="uploadImage()">Upload Image</button>
+    </div>
+</div>
+<script>
+function uploadImage() {
+    var fileInput = document.getElementById('file-input');
+    var file = fileInput.files[0];
+    var description = document.getElementById('description').value;
+    
+    if (file) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            var imagePreview = document.getElementById('image-preview');
+            var uploadedImage = document.getElementById('uploaded-image');
+            uploadedImage.src = e.target.result;
+            imagePreview.style.display = 'block';
+        };
+        reader.readAsDataURL(file);
+    } else {
+        alert('Please select an image file.');
+    }
+}
+</script>
+</body>
+</html>
